@@ -39,7 +39,7 @@ We follow the recommendations of [4][4]:
 * Include as many labels as useful for the final applications
 * For properties, use verbal phrases and the addition of the
 predicate or range of the relation for disambiguation purposes
-* Definitions of similar concepts should be made in the same manner.
+* Labeling of similar concepts should be made in a coherent way. For instance, use either `chicken` and `beaf` or `chicken meat` and `beaf meat` rather than `chicken` and `beaf meat`.
 
 
 ## Pitfalls catalogue
@@ -65,17 +65,17 @@ We follow the [OOPS! common pitfalls catalogue][15]:
 * P18. **Overspecializing the domain or range**: This pitfall consists in defining a domain or range not general enough for a property, i.e, no considering all the individuals or datatypes that might be involved in such a domain or range. This pitfall is related to the guidelines provided in [2][2] and [7][7].
 * P19. **Defining multiple domains or ranges in properties**: The domain or range (or both) of a property (relationships and attributes) is defined by stating more than one rdfs:domain or rdfs:range statements. In OWL multiple rdfs:domain or rdfs:range axioms are allowed, but they are interpreted as conjunction, being, therefore, equivalent to the construct owl:intersectionOf. This pitfall is related to the common error that appears when defining domains and ranges described in [7][7].
 * P20. **Misusing ontology annotations**: The contents of some annotation properties are swapped or misused. This pitfall might affect annotation properties related to natural language information (for example, annotations for naming such as rdfs:label or for providing descriptions such as rdfs:comment). Other types of annotation could also be affected as temporal, versioning information, among others.
-* P21. Using a miscellaneous class: This pitfall refers to the creation of a class with the only goal of classifying the instances that do not belong to any of its sibling classes (classes with which the miscellaneous problematic class shares a common direct ancestor).
-* P22. Using different naming conventions in the ontology: The ontology elements are not named following the same convention (for example CamelCase or use of delimiters as "-" or "_") . Some notions about naming conventions are provided in [2][2].
-* P23. Duplicating a datatype already provided by the implementation language: A class and its corresponding individuals are created to represent existing datatypes in the implementation language.
-* P24. Using recursive definitions: An ontology element (a class, an object property or a datatype property) is used in its own definition. Some examples of this would be: (a) the definition of a class as the enumeration of several classes including itself; (b) the appearance of a class within its owl:equivalentClass or rdfs:subClassOf axioms; (c) the appearance of an object property in its rdfs:domain or range rdfs:range definitions; or (d) the appearance of a datatype property in its rdfs:domain definition.
-* P25. Defining a relationship as inverse to itself: A relationship is defined as inverse of itself. In this case, this relationship could have been defined as owl:SymmetricProperty instead.
-* P26. Defining inverse relationships for a symmetric one: A symmetric object property (owl:SymmetricProperty) is defined as inverse of another object property (using owl:inverseOf).
-* P27. Defining wrong equivalent properties: Two object properties or two datatype properties are defined as equivalent, using owl:equivalentProperty, even though they do not have the same semantics.
-* P28. Defining wrong symmetric relationships: A relationship is defined as symmetric, using owl:SymmetricProperty, when the relationship is not necessarily symmetric.
-* P29. Defining wrong transitive relationships: A relationship is defined as transitive, using owl:TransitiveProperty, when the relationship is not necessarily transitive.
-* P30. Equivalent classes not explicitly declared: This pitfall consists in missing the definition of equivalent classes (owl:equivalentClass) in case of duplicated concepts. When an ontology reuses terms from other ontologies, classes that have the same meaning should be defined as equivalent in order to benefit the interoperability between both ontologies.
-* P31. Defining wrong equivalent classes: Two classes are defined as equivalent, using owl:equivalentClass, when they are not necessarily equivalent.
+* P21. **Using a miscellaneous class**: This pitfall refers to the creation of a class with the only goal of classifying the instances that do not belong to any of its sibling classes (classes with which the miscellaneous problematic class shares a common direct ancestor).
+* P22. **Using different naming conventions in the ontology**: The ontology elements are not named following the same convention (for example CamelCase or use of delimiters as "-" or "_") . Some notions about naming conventions are provided in [2][2].
+* P23. **Duplicating a datatype already provided by the implementation language**: A class and its corresponding individuals are created to represent existing datatypes in the implementation language.
+* P24. **Using recursive definitions**: An ontology element (a class, an object property or a datatype property) is used in its own definition. Some examples of this would be: (a) the definition of a class as the enumeration of several classes including itself; (b) the appearance of a class within its owl:equivalentClass or rdfs:subClassOf axioms; (c) the appearance of an object property in its rdfs:domain or range rdfs:range definitions; or (d) the appearance of a datatype property in its rdfs:domain definition.
+* P25. **Defining a relationship as inverse to itself**: A relationship is defined as inverse of itself. In this case, this relationship could have been defined as owl:SymmetricProperty instead.
+* P26. **Defining inverse relationships for a symmetric one**: A symmetric object property (owl:SymmetricProperty) is defined as inverse of another object property (using owl:inverseOf).
+* P27. **Defining wrong equivalent properties**: Two object properties or two datatype properties are defined as equivalent, using owl:equivalentProperty, even though they do not have the same semantics.
+* P28. **Defining wrong symmetric relationships**: A relationship is defined as symmetric, using owl:SymmetricProperty, when the relationship is not necessarily symmetric.
+* P29. **Defining wrong transitive relationships**: A relationship is defined as transitive, using owl:TransitiveProperty, when the relationship is not necessarily transitive.
+* P30. **Equivalent classes not explicitly declared**: This pitfall consists in missing the definition of equivalent classes (owl:equivalentClass) in case of duplicated concepts. When an ontology reuses terms from other ontologies, classes that have the same meaning should be defined as equivalent in order to benefit the interoperability between both ontologies.
+* P31. **Defining wrong equivalent classes**: Two classes are defined as equivalent, using owl:equivalentClass, when they are not necessarily equivalent.
 * P32. Several classes with the same label: Two or more classes have the same content for natural language annotations for naming, for example the rdfs:label annotation. This pitfall might involve lack of accuracy when defining terms.
 * P33. Creating a property chain with just one property: The OWL 2 construct owl:propertyChainAxiom allows a property to be defined as the composition of several properties (see http://www.w3.org/TR/owl2-new-features/F8:_Property_Chain_Inclusion for additional details). In this sense, when an individual "a" is connected with an individual "b" by a chain of two or more object properties (specified in the antecedent of the chain), it is necessary to connect "a" with "b" by using the object property in the consequent of the chain. This pitfall consists in creating a property chain (owl:propertyChainAxiom) that includes only one property in the antecedent part.
 * P34. Untyped class: An ontology element is used as a class without having been explicitly declared as such using the primitives owl:Class or rdfs:Class. This pitfall is related with the common problems listed in [8][8].
@@ -89,20 +89,28 @@ We follow the [OOPS! common pitfalls catalogue][15]:
 
 ## Additional recommendations and further remarks
 
+* P03: In particular, use sub-classes for fixed concepts rather than introducing a class Type.
+For example, `Document` with sub-class `Tutorial`, `Scientific Article`, etc.
+For sub-concepts that vary, use relationships between individuals, such as `hasThema`.
+When extending new sub-classes, care should be taken to preserve backward compatibility.
 * P04: we leave this pitfall in brackets, as it may be useful to collect disconnected concepts in one coherent ontology (e.g. the Dublin Core ontology)
-* P06: class constraints should only be used to characterize the class and not as repetition of properties with a given domain and range.
+* P06 and P24: class constraints should only be used to characterize the class and not as repetition of properties with a given domain and range.
 As an example, the dectionary definition of a "person" does not state that a person is a "thing" that "knows" a "person".
 Rather, this relationship is described in the definition of "know"
 * P11: when designing a universal ontology, one can give a general domain or range such as owl:thing
 or, better, introduce an abstract general concept which is different and more specific than owl:thing (while remaining vague).
 * P13: there may be occasions when an inverse is not semantically relevant. In this case, the latter could be omitted.
-* Extend existing universal ontologies. Some of them can be found on [LOV][http://lov.okfn.org/dataset/lov/].
-* When extending an ontology, import the ontology but do not modify it.
+* Prefer extending existing universal ontologies rather than developing new ones. Some of them can be found on [LOV][http://lov.okfn.org/dataset/lov/].
+* Favor modular designs.
+When extending an ontology, import the ontology but do not modify it.
 Instead, use `owl:sameAs` to define equivalent classes to be developed.
+For example, the `PAIR` ontology can be extended with a `project management` module,
+but `PAIR` remains a federating ontology that can be used by various types of organizations.
 * Unions of different concepts in the domain and/or the range of a property should be avoided.
 For instance this may lead to allowing one to link a concept in the domain to another unrelated one in the range.
 Instead, properties should be specialized. For example, `knowsPerson` and `knowsThema` instead of `knows`.
 This is related to P01.
+* Avoid including abstract classes used in a preliminary design phase in the final ontology when these classes are not practical.
 
 ## Pitfalls in PAIR
 
@@ -121,6 +129,7 @@ This is related to P01.
 * The domain is not well described.
 * Disjointness is missing.
 * Domains and ranges make the uninion of different concepts. Properties should be specialized.
+* Remove abstract classes What, When, etc.
 
 ## TODO
 
