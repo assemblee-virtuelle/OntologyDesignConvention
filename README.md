@@ -187,6 +187,7 @@ This is related to P01.
 [8]: http://ceur-ws.org/Vol-628/ldow2010_paper04.pdf
 [9]: https://joinup.ec.europa.eu/sites/default/files/document/2013-06/Study%20-%20Study%20on%20persistent%20URIs_4.pdf
 [10]: http://www.w3.org/DesignIssues/LinkedData.html
+[11]: http://linkeddatabook.com/editions/1.0/
 [12]: http://bvatant.blogspot.fr/2012/02/is-your-linked-data-vocabulary-5-star_9588.html
 [13]: http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf
 [15]: http://oops.linkeddata.es/catalogue.jsp
