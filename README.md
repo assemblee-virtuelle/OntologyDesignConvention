@@ -149,6 +149,8 @@ This is related to P01.
 
 ## References
 
+[Aguado-De Cea, G., Montiel-Ponsoda, E., Poveda-Villalón, M., and Giraldo-Pasmin, O.X. (2015). *Lexicalizing Ontologies: The issues behind the labels. In Multimodal communication in the 21st century: Professional and academic challenges*. 33rd Conference of the Spanish Association of Applied Linguistics (AESLA), XXXIII AESLA.][1]
+
 [Noy, N. F., McGuinness, D. L., et al. (2001). *Ontology 101*][2]
 
 [Gómez-Pérez, A. (1999). *Evaluation of Taxonomic Knowledge in Ontologies and Knowledge Bases*][3]
@@ -157,16 +159,34 @@ This is related to P01.
 
 [Vrandecic, D. (2010). *Ontology Evaluation*. PhD thesis.][5]
 
+[Gómez-Pérez, A. (2004). *Ontology evaluation*. In Handbook on ontologies, pages 251-273. Springer.][6]
+
 [Rector, A., Drummond, N., Horridge, M., Rogers, J., Knublauch, H., Stevens, R., Wang, H., and Wroe, C. (2004). Owl pizzas: Practical experience of teaching owl-dl: Common errors & common patterns. In Engineering Knowledge in the Age of the Semantic Web, pages 63-81. Springer.][7]
+
+[Hogan, A., Harth, A., Passant, A., Decker, S., and Polleres, A. (2010). *Weaving the pedantic web. In Proceedings of the WWW2010 Workshop on Linked Data on the Web*, LDOW 2010, Raleigh, USA, April 27, 2010.][8]
+
+[Archer, P., Goedertier, S., and Loutas, N. (2012). *D7. 1.3-study on persistent URIs, with identification of best practices and recommendations on the topic for the Mss and the EC*. PwC EU Services.][9]
+
+[Bernes-Lee Tim. (2006). *Linked Data - Design issues*.][10]
+
+[Heath, T. and Bizer, C. (2011). *Linked Data: Evolving the Web into a Global Data Space*. Morgan & Claypool, 1st edition.][11]
+
+[Vatant, B. (2012). *Is your linked data vocabulary 5-star?*.][12]
 
 [*Protege OWL Tutorial*][13]
 
 [OOPS! common pitfalls catalogue][15]
 
+[1]: https://ac.els-cdn.com/S1877042815056608/1-s2.0-S1877042815056608-main.pdf?_tid=23358f4e-6ec2-438d-9cf1-b9a483f225ab&acdnat=1520009653_d6e0957f9026bd3294065aa761477e57
 [2]: https://protege.stanford.edu/publications/ontology_development/ontology101.pdf
 [3]: http://oa.upm.es/6456/1/Evaluation_of_Taxonomic_K.pdf
 [4]: http://dcevents.dublincore.org/index.php/IntConf/dc-2011/paper/viewFile/47/15
 [5]: http://www.aifb.kit.edu/images/b/b5/OntologyEvaluation.pdf
+[6]: https://www.springer.com/us/book/9783540709992
 [7]: http://www.cs.man.ac.uk/~rector/papers/common_errors_ekaw_2004.pdf
+[8]: http://ceur-ws.org/Vol-628/ldow2010_paper04.pdf
+[9]: https://joinup.ec.europa.eu/sites/default/files/document/2013-06/Study%20-%20Study%20on%20persistent%20URIs_4.pdf
+[10]: http://www.w3.org/DesignIssues/LinkedData.html
+[12]: http://bvatant.blogspot.fr/2012/02/is-your-linked-data-vocabulary-5-star_9588.html
 [13]: http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf
 [15]: http://oops.linkeddata.es/catalogue.jsp
