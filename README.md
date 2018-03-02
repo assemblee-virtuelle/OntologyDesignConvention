@@ -62,9 +62,9 @@ We follow the [OOPS! common pitfalls catalogue][15]:
 * P15. **Using "some not" in place of "not some"**: The pitfall consists in using a "some not" structure when a "not some" is required. This is due to the misplacement of the existential quantifier (owl:someValuesFrom) and the negative operator (owl:complementOf). (a) When to use a "some not" structure (DrelationshipS: ClassA): to state that there is at least one individual acting as object of the relationship "relationshipS" and such individual do not belong to class "ClassA". This implies that there must be at least one instantiation of the relationshipsS whose target does not belong to "ClassA". This does not prevent instances from ClassA acting as objects of the relationships. (b) When to use a "not some" structure ( DrelationshipS:ClassA): to state that no individuals in class "ClassA" act as objects of the relationship "relationshipS". This does not imply the existence of individuals from other classes acting as objects of the relationship. This pitfall is explained in more detail in [7][7].
 * P16. **Using a primitive class in place of a defined one**: "Primitive" classes are those for which there are only necessary conditions [7][7]. They are described using rdfs:subClassOf. "Defined" classes are those for which there are necessary and sufficient conditions [7][7]. They are described using owl:equivalentClass. This pitfall implies creating a primitive class rather than a defined one in case automatic classification of individuals is intended. It should be clarified that, in general, nothing will be inferred to be subsumed under a primitive class by the classifier [7][7]. This pitfall is related to the open world assumption.
 * P17. **Overspecializing a hierarchy**: The hierarchy in the ontology is specialized in such a way that the final leaves are defined as classes and these classes will not have instances. Authors in [e] provide guidelines for distinguishing between a class and an instance when modeling hierarchies.
-* P18. Overspecializing the domain or range: This pitfall consists in defining a domain or range not general enough for a property, i.e, no considering all the individuals or datatypes that might be involved in such a domain or range. This pitfall is related to the guidelines provided in [2][2] and [7][7].
-* P19. Defining multiple domains or ranges in properties: The domain or range (or both) of a property (relationships and attributes) is defined by stating more than one rdfs:domain or rdfs:range statements. In OWL multiple rdfs:domain or rdfs:range axioms are allowed, but they are interpreted as conjunction, being, therefore, equivalent to the construct owl:intersectionOf. This pitfall is related to the common error that appears when defining domains and ranges described in [7][7].
-* P20. Misusing ontology annotations: The contents of some annotation properties are swapped or misused. This pitfall might affect annotation properties related to natural language information (for example, annotations for naming such as rdfs:label or for providing descriptions such as rdfs:comment). Other types of annotation could also be affected as temporal, versioning information, among others.
+* P18. **Overspecializing the domain or range**: This pitfall consists in defining a domain or range not general enough for a property, i.e, no considering all the individuals or datatypes that might be involved in such a domain or range. This pitfall is related to the guidelines provided in [2][2] and [7][7].
+* P19. **Defining multiple domains or ranges in properties**: The domain or range (or both) of a property (relationships and attributes) is defined by stating more than one rdfs:domain or rdfs:range statements. In OWL multiple rdfs:domain or rdfs:range axioms are allowed, but they are interpreted as conjunction, being, therefore, equivalent to the construct owl:intersectionOf. This pitfall is related to the common error that appears when defining domains and ranges described in [7][7].
+* P20. **Misusing ontology annotations**: The contents of some annotation properties are swapped or misused. This pitfall might affect annotation properties related to natural language information (for example, annotations for naming such as rdfs:label or for providing descriptions such as rdfs:comment). Other types of annotation could also be affected as temporal, versioning information, among others.
 * P21. Using a miscellaneous class: This pitfall refers to the creation of a class with the only goal of classifying the instances that do not belong to any of its sibling classes (classes with which the miscellaneous problematic class shares a common direct ancestor).
 * P22. Using different naming conventions in the ontology: The ontology elements are not named following the same convention (for example CamelCase or use of delimiters as "-" or "_") . Some notions about naming conventions are provided in [2][2].
 * P23. Duplicating a datatype already provided by the implementation language: A class and its corresponding individuals are created to represent existing datatypes in the implementation language.
@@ -99,6 +99,10 @@ or, better, introduce an abstract general concept which is different and more sp
 * Extend existing universal ontologies. Some of them can be found on [LOV][http://lov.okfn.org/dataset/lov/].
 * When extending an ontology, import the ontology but do not modify it.
 Instead, use `owl:sameAs` to define equivalent classes to be developed.
+* Unions of different concepts in the domain and/or the range of a property should be avoided.
+For instance this may lead to allowing one to link a concept in the domain to another unrelated one in the range.
+Instead, properties should be specialized. For example, `knowsPerson` and `knowsThema` instead of `knows`.
+This is related to P01.
 
 ## Pitfalls in PAIR
 
@@ -116,6 +120,14 @@ Instead, use `owl:sameAs` to define equivalent classes to be developed.
 * A license is missing.n
 * The domain is not well described.
 * Disjointness is missing.
+* Domains and ranges make the uninion of different concepts. Properties should be specialized.
+
+## TODO
+
+Regarder comment les ontologies qui font reference respectent ou non ces indications, e.g.:
+* DC
+* FOAF
+* SCHEMA
 
 
 ## References
