@@ -144,6 +144,7 @@ This is related to P01.
   * SCHEMA
 * Check references given by OOPS!
 * Reorganize the document by categories.
+* Talk about modifications of PAIR with Seb for SemApps
 
 
 ## References
