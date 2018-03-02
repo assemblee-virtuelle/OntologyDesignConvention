@@ -76,16 +76,16 @@ We follow the [OOPS! common pitfalls catalogue][15]:
 * P29. **Defining wrong transitive relationships**: A relationship is defined as transitive, using owl:TransitiveProperty, when the relationship is not necessarily transitive.
 * P30. **Equivalent classes not explicitly declared**: This pitfall consists in missing the definition of equivalent classes (owl:equivalentClass) in case of duplicated concepts. When an ontology reuses terms from other ontologies, classes that have the same meaning should be defined as equivalent in order to benefit the interoperability between both ontologies.
 * P31. **Defining wrong equivalent classes**: Two classes are defined as equivalent, using owl:equivalentClass, when they are not necessarily equivalent.
-* P32. Several classes with the same label: Two or more classes have the same content for natural language annotations for naming, for example the rdfs:label annotation. This pitfall might involve lack of accuracy when defining terms.
-* P33. Creating a property chain with just one property: The OWL 2 construct owl:propertyChainAxiom allows a property to be defined as the composition of several properties (see http://www.w3.org/TR/owl2-new-features/F8:_Property_Chain_Inclusion for additional details). In this sense, when an individual "a" is connected with an individual "b" by a chain of two or more object properties (specified in the antecedent of the chain), it is necessary to connect "a" with "b" by using the object property in the consequent of the chain. This pitfall consists in creating a property chain (owl:propertyChainAxiom) that includes only one property in the antecedent part.
-* P34. Untyped class: An ontology element is used as a class without having been explicitly declared as such using the primitives owl:Class or rdfs:Class. This pitfall is related with the common problems listed in [8][8].
-* P35. Untyped property: An ontology element is used as a property without having been explicitly declared as such using the primitives rdf:Property, owl:ObjectProperty or owl:DatatypeProperty. This pitfall is related with the common problems listed in [8][8].
-* (*Linked Data Feature*) P36. URI contains file extension: This pitfall occurs if file extensions such as ".owl", ".rdf", ".ttl", ".n3" and ".rdfxml" are included in an ontology URI. This pitfall is related with the recommendations provided in [9][9].
-* (*Linked Data Feature*) P37. Ontology not available on the Web: This pitfall occurs when the ontology code (OWL encoding) or its documentation (HTML document) is missing when looking up its URI. This pitfall deals with the first point from the Linked Data star system that states "On the web" ([10][10] and [11][11]). Guidelines in [12][12] also recommends to "Publish your vocabulary on the Web at a stable URI". This pitfall is also related to the problems listed in [8][8] and [5][5].
-* P38. No OWL ontology declaration: This pitfall consists in not declaring the owl:Ontology tag, which provides the ontology metadata. The owl:Ontology tag aims at gathering metadata about a given ontology such as version information, license, provenance, creation date, and so on. It is also used to declare the inclusion of other ontologies.
-* (*Linked Data Feature*) P39. Ambiguous namespace: This pitfall consists in declaring neither the ontology URI nor the xml:base namespace. If this is the case, the ontology namespace is matched to the file location. This situation is not desirable, as the location of a file might change while the ontology should remain stable, as proposed in [12][12].
-* (*Linked Data Feature*) P40. Namespace hijacking: It refers to reusing or referring to terms from another namespace that are not defined in such namespace. This is an undesirable situation as no information can be retrieved when looking up those undefined terms. This pitfall is related to the Linked Data publishing guidelines provided in [11][11]: "Only define new terms in a namespace that you control" and to the guidelines provided in [5][5].
-* P41. **No license declared**: The ontology metadata omits information about the license that applies to the ontology. One can use the licence property of the [dc/terms](http://purl.org/dc/terms/) ontology.
+* P32. **Several classes with the same label**: Two or more classes have the same content for natural language annotations for naming, for example the rdfs:label annotation. This pitfall might involve lack of accuracy when defining terms.
+* P33. **Creating a property chain with just one property**: The OWL 2 construct owl:propertyChainAxiom allows a property to be defined as the composition of several properties (see http://www.w3.org/TR/owl2-new-features/F8:_Property_Chain_Inclusion for additional details). In this sense, when an individual "a" is connected with an individual "b" by a chain of two or more object properties (specified in the antecedent of the chain), it is necessary to connect "a" with "b" by using the object property in the consequent of the chain. This pitfall consists in creating a property chain (owl:propertyChainAxiom) that includes only one property in the antecedent part.
+* P34. **Untyped class**: An ontology element is used as a class without having been explicitly declared as such using the primitives owl:Class or rdfs:Class. This pitfall is related with the common problems listed in [8][8].
+* P35. **Untyped property**: An ontology element is used as a property without having been explicitly declared as such using the primitives rdf:Property, owl:ObjectProperty or owl:DatatypeProperty. This pitfall is related with the common problems listed in [8][8].
+* (*Linked Data Feature*) P36. **URI contains file extension**: This pitfall occurs if file extensions such as ".owl", ".rdf", ".ttl", ".n3" and ".rdfxml" are included in an ontology URI. This pitfall is related with the recommendations provided in [9][9].
+* (*Linked Data Feature*) P37. **Ontology not available on the Web**: This pitfall occurs when the ontology code (OWL encoding) or its documentation (HTML document) is missing when looking up its URI. This pitfall deals with the first point from the Linked Data star system that states "On the web" ([10][10] and [11][11]). Guidelines in [12][12] also recommends to "Publish your vocabulary on the Web at a stable URI". This pitfall is also related to the problems listed in [8][8] and [5][5].
+* P38. **No OWL ontology declaration**: This pitfall consists in not declaring the owl:Ontology tag, which provides the ontology metadata. The owl:Ontology tag aims at gathering metadata about a given ontology such as version information, license, provenance, creation date, and so on. It is also used to declare the inclusion of other ontologies.
+* (*Linked Data Feature*) P39. **Ambiguous namespace**: This pitfall consists in declaring neither the ontology URI nor the xml:base namespace. If this is the case, the ontology namespace is matched to the file location. This situation is not desirable, as the location of a file might change while the ontology should remain stable, as proposed in [12][12].
+* (*Linked Data Feature*) P40. **Namespace hijacking**: It refers to reusing or referring to terms from another namespace that are not defined in such namespace. This is an undesirable situation as no information can be retrieved when looking up those undefined terms. This pitfall is related to the Linked Data publishing guidelines provided in [11][11]: "Only define new terms in a namespace that you control" and to the guidelines provided in [5][5].
+* P41. **No license declared**: The ontology metadata omits information about the license that applies to the ontology.
 
 ## Additional recommendations and further remarks
 
@@ -100,6 +100,9 @@ Rather, this relationship is described in the definition of "know"
 * P11: when designing a universal ontology, one can give a general domain or range such as owl:thing
 or, better, introduce an abstract general concept which is different and more specific than owl:thing (while remaining vague).
 * P13: there may be occasions when an inverse is not semantically relevant. In this case, the latter could be omitted.
+* P30: Note  that owl:sameAs and owl:equivalentClass are different. owl:sameAs means that the two classes are identical.
+Two classes may have different definitions, but refer to the same individuals, and should thus be defined as equivalent.
+* P41: One can use the licence property of the [dc/terms](http://purl.org/dc/terms/) ontology.
 * Prefer extending existing universal ontologies rather than developing new ones. Some of them can be found on [LOV][http://lov.okfn.org/dataset/lov/].
 * Favor modular designs.
 When extending an ontology, import the ontology but do not modify it.
@@ -111,6 +114,7 @@ For instance this may lead to allowing one to link a concept in the domain to an
 Instead, properties should be specialized. For example, `knowsPerson` and `knowsThema` instead of `knows`.
 This is related to P01.
 * Avoid including abstract classes used in a preliminary design phase in the final ontology when these classes are not practical.
+* The ontology should be at the same address as that pointed by the URI in the definition of the ontology.
 
 ## Pitfalls in PAIR
 
@@ -130,13 +134,16 @@ This is related to P01.
 * Disjointness is missing.
 * Domains and ranges make the uninion of different concepts. Properties should be specialized.
 * Remove abstract classes What, When, etc.
+* Remove extension from URI of PAIR ontology
 
 ## TODO
 
-Regarder comment les ontologies qui font reference respectent ou non ces indications, e.g.:
-* DC
-* FOAF
-* SCHEMA
+* Regarder comment les ontologies qui font reference respectent ou non ces indications, e.g.:
+  * DC
+  * FOAF
+  * SCHEMA
+* Check references given by OOPS!
+* Reorganize the document by categories.
 
 
 ## References
