@@ -142,7 +142,7 @@ or, better, introduce an abstract general concept which is different and more sp
 * (*Linked Data Feature*) Pitfall 40. **Namespace hijacking**: It refers to reusing or referring to terms from another namespace that are not defined in such namespace. This is an undesirable situation as no information can be retrieved when looking up those undefined terms. This pitfall is related to the Linked Data publishing guidelines provided in [11][11]: "Only define new terms in a namespace that you control" and to the guidelines provided in [5][5].
 * Pitfall 41. **No license declared**: The ontology metadata omits information about the license that applies to the ontology.
 
-	*Remark: One can use the licence property of the [dc/terms](http://purl.org/dc/terms/) ontology.*
+	*Remark: One can use the license property of the [dc/terms](http://purl.org/dc/terms/) ontology.*
 
 ### Ontology extension
 
@@ -165,7 +165,7 @@ but `PAIR` remains a federating ontology that can be used by various types of or
 * Import the PAIR ontology without modifying it when extending it.
 * `GoodOrService` merges different concepts in one class.
 * `Good` is polysemous.
-* A license is missing.n
+* A license is missing.
 * The domain is not well described.
 * Disjointness is missing.
 * Domains and ranges make the uninion of different concepts. Properties should be specialized.
