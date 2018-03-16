@@ -14,6 +14,7 @@ In addition, we recall the [OOPS! common pitfalls catalogue][15] and provide add
   - [Properties and datatypes](#properties-and-datatypes)
   - [Ontology definition](#ontology-definition)
   - [Ontology extension](#ontology-extension)
+  - [Designing a thesaurus](#designing-a-thesaurus)
 - [Pitfalls in PAIR](#pitfalls-in-pair)
 - [TODO](#todo)
 - [References](#references)
@@ -51,15 +52,16 @@ Where the cursor is chosen to be put should be made explicit in an annotation de
 We follow the recommendations of [4][4]:
 * All objects, properties and individuals are labeled
 * Provide labels that guarantee human readability and that can be easily matched in free text
-* We also recommend to add comments to provide more complete descriptions of the concepts
+* We also recommend to add comments to provide more complete descriptions of the classes and properties
 * Labels for classes should be as short as possible, self-contained, meaningful, and concise (see [1][1])
 * For properties, use verbal phrases and the addition of the predicate or range of the relation for disambiguation purposes.
-For example *Organization* - hasSiteAt - *Site*.
+For example `(Organization) hasSiteAt (Site)`.
 * The language of the label is given
 * Labels are at least given in English and in the natural language of the developer
-* The traduction of labels in other languages is highly recommended.
+* The traduction of labels in other languages is highly recommended
 * Follow language conventions (e.g. upper case for city names)
 * Use singular form
+* Use the genders corresponding to the classes labels, e.g. `(Personalité) est affiliée à (Organisation)`
 * Include as many labels as useful for the final applications
 * Labeling of similar concepts should be made in a coherent way. For instance, use either `chicken` and `beaf` or `chicken meat` and `beaf meat` rather than `chicken` and `beaf meat`.
 * Pitfall 08. **Missing annotations**: This pitfall consists in creating an ontology element and failing to provide human readable annotations attached to it. Consequently, ontology elements lack annotation properties that label them (e.g. rdfs:label, lemon:LexicalEntry, skos:prefLabel or skos:altLabel) or that define them (e.g. rdfs:comment or dc:description). This pitfall is related to the guidelines provided in [5][5].
@@ -144,6 +146,10 @@ or, better, introduce an abstract general concept which is different and more sp
 
 	*Remark: One can use the license property of the [dc/terms](http://purl.org/dc/terms/) ontology.*
 
+### Designing a thesaurus
+
+See the [SKOS reference][17].
+
 ### Ontology extension
 
 * Prefer extending existing universal ontologies rather than developing new ones. Some of them can be found on [LOV][http://lov.okfn.org/dataset/lov/].
@@ -151,6 +157,9 @@ or, better, introduce an abstract general concept which is different and more sp
 Instead, use `owl:sameAs` to define equivalent classes to be developed.
 For example, the `PAIR` ontology can be extended with a `project management` module,
 but `PAIR` remains a federating ontology that can be used by various types of organizations.
+* When defining a class or a property as equivalent to one of an external ontology,
+the more specifications than the ones from the external ontology should be added.
+To add more specifications, define the class or property as, respectively, a subClassOf or a subPropertyOf instead.
 
 ## Pitfalls in PAIR
 
@@ -214,6 +223,8 @@ but `PAIR` remains a federating ontology that can be used by various types of or
 
 [W3C Property Chain Inclusion][16]
 
+[SKOS reference][17]
+
 [1]: https://ac.els-cdn.com/S1877042815056608/1-s2.0-S1877042815056608-main.pdf?_tid=23358f4e-6ec2-438d-9cf1-b9a483f225ab&acdnat=1520009653_d6e0957f9026bd3294065aa761477e57
 [2]: https://protege.stanford.edu/publications/ontology_development/ontology101.pdf
 [3]: http://oa.upm.es/6456/1/Evaluation_of_Taxonomic_K.pdf
@@ -229,3 +240,4 @@ but `PAIR` remains a federating ontology that can be used by various types of or
 [13]: http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf
 [15]: http://oops.linkeddata.es/catalogue.jsp
 [16]: http://www.w3.org/TR/owl2-new-features/#F8:_Property_Chain_Inclusion
+[17]: https://www.w3.org/TR/2009/REC-skos-reference-20090818/
