@@ -33,7 +33,7 @@ Indeed, there is a tradeoff between the universality of the ontology and the pre
 (e.g. in the definition of the domain and range of properties).
 Where the cursor is chosen to be put should be made explicit in an annotation describing the domain of the ontology.
 
-* Pitfall 09. **Missing domain information**: Part of the information needed for modeling the intended domain is not included in the ontology. This pitfall may be related to (a) the requirements included in the Ontology Requirement Specification Document (ORSD) that are not covered by the ontology, or (b) to the lack of knowledge that can be added to the ontology to make it more complete.
+* Pitfall 09. **Missing domain information**: Part of the information needed for modeling the intended domain is not included in the ontology. This pitfall may be related to (a) the requirements included in the Ontology Requirement Specification Document (ORSD, [18][18]) that are not covered by the ontology, or (b) to the lack of knowledge that can be added to the ontology to make it more complete.
 
 ### Naming
 
@@ -225,6 +225,8 @@ To add more specifications, define the class or property as, respectively, a sub
 
 [SKOS reference][17]
 
+[Suárez-Figueroa, M.C., Gómez-Pérez, A., Villazón-Terrazas, B. (2009). *How to Write and Use the Ontology Requirements Specification Document.* Proceedings of the Confederated International Conferences, CoopIS, DOA, IS, and ODBASE 2009 on On the Move to Meaningful Internet Systems: Part II. Berlin: Springer. pp. 966-982. doi:10.1007/978-3-642-05151-7_16.][18]
+
 [1]: https://ac.els-cdn.com/S1877042815056608/1-s2.0-S1877042815056608-main.pdf?_tid=23358f4e-6ec2-438d-9cf1-b9a483f225ab&acdnat=1520009653_d6e0957f9026bd3294065aa761477e57
 [2]: https://protege.stanford.edu/publications/ontology_development/ontology101.pdf
 [3]: http://oa.upm.es/6456/1/Evaluation_of_Taxonomic_K.pdf
@@ -241,3 +243,4 @@ To add more specifications, define the class or property as, respectively, a sub
 [15]: http://oops.linkeddata.es/catalogue.jsp
 [16]: http://www.w3.org/TR/owl2-new-features/#F8:_Property_Chain_Inclusion
 [17]: https://www.w3.org/TR/2009/REC-skos-reference-20090818/
+[18]: http://oa.upm.es/5474/1/INVE_MEM_2009_64393.pdf
