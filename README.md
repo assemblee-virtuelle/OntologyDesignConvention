@@ -42,7 +42,8 @@ Where the cursor is chosen to be put should be made explicit in an annotation de
   * Class and individual names should start with a capital letter and should not contain spaces nor underscores, e.g. `WorkingGroup`
   * Object and data property names start with a lowercase, e.g. `isTypeOf`
   * Following words start with a capital letter
-* Property names start with an active verb, e.g. `knowsPerson`, `isKnownBy`, `hasName`
+* Object property names start with an active verb, e.g. `knowsPerson`, `isKnownBy`, `hasName`
+* Data property names need not start with an active verb, e.g. `address`
 * The singular is used.
 * Pitfall 01. **Creating polysemous elements**: An ontology element (class, object property or datatype property) whose identifier has different senses is included in the ontology to represent more than one conceptual idea or property.
 * Pitfall 22. **Using different naming conventions in the ontology**: The ontology elements are not named following the same convention (for example CamelCase or use of delimiters as "-" or "_") . Some notions about naming conventions are provided in [2][2].
