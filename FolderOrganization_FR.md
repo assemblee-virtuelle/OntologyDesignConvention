@@ -128,7 +128,7 @@ Ensuite, dans certaines circonstances, il peut être utile d'identifier en compl
         </tr>
         <tr>
             <td>3.0.</td>
-            <td>Ontologie</td>
+            <td>Ontology</td>
             <td>To Be Defined by Thomas</td>
             <td></td>
             <td></td>
