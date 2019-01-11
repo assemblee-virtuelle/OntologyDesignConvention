@@ -103,7 +103,7 @@ Ensuite, dans certaines circonstances, il peut être utile d'identifier en compl
             <td>Conceptionary</td>
             <td>Document listant les concepts métiers candidats au modèle</td>
             <td>Liste de référence des concepts métiers</td>
-            <td>our chaque concept : 
+            <td>Pour chaque concept : 
 </br>* Terme préféré (obligatoire / unique)
 </br>* Termes alternatifs (optionnel / multiple)
 </br>* Description (obligatoire / unique)
@@ -128,10 +128,10 @@ Ensuite, dans certaines circonstances, il peut être utile d'identifier en compl
         </tr>
         <tr>
             <td>3.0.</td>
-            <td>Ontology</td>
-            <td>To Be Defined by Thomas</td>
-            <td></td>
-            <td></td>
+            <td>Sources</td>
+            <td>Stores the raw files of the ontology implementation</td>
+            <td>OWL files editable in Protégé, RDF files of individuals, SKOS files, etc.</td>
+            <td>OWL file for editing in Protégé. Imported ontologies file. Optionnally RDF files of individuals. SKOS files of the vocabulary terms.</td>
         </tr>
     </tbody>
 </table>
