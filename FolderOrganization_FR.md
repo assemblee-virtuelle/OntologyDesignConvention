@@ -129,9 +129,30 @@ Ensuite, dans certaines circonstances, il peut être utile d'identifier en compl
         <tr>
             <td>3.0.</td>
             <td>Sources</td>
-            <td>Stores the raw files of the ontology implementation</td>
-            <td>OWL files editable in Protégé, RDF files of individuals, SKOS files, etc.</td>
-            <td>OWL file for editing in Protégé. Imported ontologies file. Optionnally RDF files of individuals. SKOS files of the vocabulary terms.</td>
+            <td>Stores the raw files of the ontology implementation, in subfolders</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3.1.</td>
+            <td>owl</td>
+            <td>Stores the OWL implementation of the ontology</td>
+            <td>OWL file(s) editable in Protégé along with (if necessary) imported ontologies files.</td>
+            <td>*.owl file(s)</td>
+        </tr>
+        <tr>
+            <td>3.2.</td>
+            <td>skos</td>
+            <td>Stores the SKOS vocabularies to be used with the ontology</td>
+            <td>SKOS files to be used in connection with the ontology</td>
+            <td>RDF files containing vocabularies. Source files that might have served to generate the SKOS files (typically Excel table)</td>
+        </tr>
+        <tr>
+            <td>3.3.</td>
+            <td>examples</td>
+            <td>Exemplify how the ontolgy should be used</td>
+            <td>Gives examples of RDF data structured according to the ontology</td>
+            <td>RDF files containing instances of the concepts and properties defined in the OWL file.</td>
         </tr>
     </tbody>
 </table>
